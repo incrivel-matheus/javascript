@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Valores</title>
+    <style>
+        body {
+            font: normal 16pt arial;
+            background: black;
+            color: white;
+        }
+        input {
+            font: normal 16pt arial;
+            width: 100px;
+        }
+        div#res {
+            margin-top: 10px;
+        }
+        div#res2{
+            margin-top: 10px;
+        }
+        div#area {
+            width: 200px;
+            height: 200px;
+            background: white;
+            color: black;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <input type="number" name="text1" id="text1"> +
+    <input type="number" name="text2" id="text2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="res">Resultado</div>
+    <h2>Subtraindo Valores</h2>
+    <input type="number" name="text3" id="text3"> -
+    <input type="number" name="text4" id="text4">
+    <input type="button" value="Subtrair" onclick="subtrair()">
+    <div id="res2">Resultado</div>
+    
+    <div id = 'area'>Area</div>
+
+    <script>
+        function somar() {
+            var tn1 = window.document.querySelector('input#text1')
+            var tn2 = window.document.querySelector('input#text2')
+            var res = window.document.querySelector('div#res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = 'A soma entre ' + n1 + ' e ' + n2 + ' é igual a ' + s
+        }
+        function subtrair() {
+            var tn3 = window.document.querySelector('input#text3')
+            var tn4 = window.document.querySelector('input#text4')
+            var res2 = window.document.querySelector('div#res2')
+            var n3 = Number(tn3.value)
+            var n4 = Number(tn4.value)
+            var sub = n3 - n4
+            res2.innerHTML = 'A subtração entre ' + n3 + ' - ' + n4 + ' é igual a ' + sub
+
+        }
+        
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar) //funcao para clicar//
+        a.addEventListener('mouseout', fora)
+        a.addEventListener('mouseenter', dentro)
+        
+        function clicar() {
+          a.innerText = 'clicou'
+          a.style.background = 'green'
+        }
+        function fora() {
+            a.innerText = 'fora'
+            a.style.background = 'red'
+            a.style.color = 'black'
+        }
+        function dentro() {
+            a.innerText = 'dentro'
+            a.style.background = 'blue'
+            a.style.color = 'white'
+        }
+    </script>
+</body>
+</html>
